@@ -1,0 +1,147 @@
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #1e1e2f, #0e0e15);
+  color: #fff;
+}
+
+/* ===== Header ===== */
+header {
+  text-align: center;
+  padding: 12px 8px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+header p {
+  margin: 2px 0 0;
+  opacity: 0.65;
+  font-size: 0.85rem;
+}
+
+/* ===== Layout ===== */
+main {
+  padding: 8px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== Button ===== */
+#randomBtn {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  color: #000;
+  margin-bottom: 8px;
+}
+
+/* ===== Result ===== */
+.result {
+  text-align: center;
+  font-size: 1.05rem;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: 8px;
+  animation: pop 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pop {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Deck ===== */
+.deck {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+/* ===== Card ===== */
+.card {
+  background: linear-gradient(145deg, #2a2a3f, #1a1a2b);
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.45);
+}
+
+.card.highlight {
+  outline: 2px solid #ffcc33;
+  animation: highlight 0.5s ease;
+}
+
+@keyframes highlight {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+}
+
+.value {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.suit {
+  font-size: 1.1rem;
+}
+
+.suit.red {
+  color: #ff5a5a;
+}
+
+.food {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* ===== Tablet ===== */
+@media (min-width: 600px) {
+  .deck {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 900px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #randomBtn {
+    width: auto;
+    padding: 10px 20px;
+    margin: 0 auto 10px;
+    display: block;
+  }
+
+  .deck {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
